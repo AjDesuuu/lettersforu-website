@@ -14,23 +14,25 @@
       // Get the corresponding modal ID from the anchor tag's dataset
       var modalId = this.getAttribute('data-modal');
 
-      // Wait for the animation to complete before triggering the modal
+      // Wait for the envelope animation to complete before showing the modal
       setTimeout(function() {
-        // Remove the animation class to reset the envelope state
-        wrapper.classList.remove('open-envelope');
-
         // Select the modal using the modalId
         var myModal = document.querySelector(modalId);
         var modalInstance = new bootstrap.Modal(myModal);
-        
+
         // Show the modal
         modalInstance.show();
+
+        // Close the envelope when the modal is hidden
+        myModal.addEventListener('hidden.bs.modal', function() {
+          wrapper.classList.remove('open-envelope');
+        });
       }, 1100); // Adjust this timeout based on the envelope animation duration
     });
   });
 
+  // Scroll to top functionality
   var scrollToTop = document.querySelector('.scroll-to-top');
-  
   if (scrollToTop) {
     window.addEventListener('scroll', function() {
       var scrollDistance = window.pageYOffset;
@@ -38,8 +40,8 @@
     });
   }
 
+  // Navbar shrink behavior
   var mainNav = document.querySelector('#mainNav');
-
   if (mainNav) {
     var navbarCollapse = mainNav.querySelector('.navbar-collapse');
     if (navbarCollapse) {
@@ -63,26 +65,4 @@
     document.addEventListener("scroll", collapseNavbar);
   }
 
-  // Handle modal opening and closing without animation
-  var modals = document.querySelectorAll('.modal');
-
-  modals.forEach(function(modal) {
-    var modalContent = modal.querySelector('.modal-content');
-
-    // Opening animation
-    modal.addEventListener('show.bs.modal', function() {
-      modalContent.style.animation = 'modalFadeIn 0.5s forwards';
-    });
-
-    // Closing without animation
-    modal.addEventListener('hide.bs.modal', function(e) {
-      e.preventDefault(); // Prevent immediate closure to handle the animation
-      modalContent.style.animation = ''; // Remove animation for closing
-
-      // Hide the modal immediately
-      var modalInstance = bootstrap.Modal.getInstance(modal);
-      modalInstance.hide();
-    });
-  });
-
-})(); // End of use strict
+})();

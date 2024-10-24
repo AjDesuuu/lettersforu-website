@@ -107,10 +107,10 @@
 
 .open-envelope .lid.two {
     transform: rotateX(180deg);
-    transition-delay: 0.25s;
+    transition-delay: 0.20s;
 }
 
 .open-envelope .letter {
     transform: translateY(-50px);
-    transition-delay: 0.5s;
+    transition-delay: 0.35s;
 }

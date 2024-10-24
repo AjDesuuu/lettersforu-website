@@ -43,7 +43,7 @@
 
     // Opening animation
     modal.addEventListener('show.bs.modal', function() {
-      modalContent.style.animation = 'modalFadeIn 0.3s forwards';
+      modalContent.style.animation = 'modalFadeIn 0.5s forwards';
     });
 
     // Closing without animation

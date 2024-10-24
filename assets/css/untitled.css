@@ -1,0 +1,223 @@
+:root {
+  --bs-primary: #f8b7c3;
+  --bs-primary-rgb: 248, 183, 195;
+  --bs-secondary: #f2d1d8;
+  --bs-secondary-rgb: 242, 209, 216;
+  --bs-success: #f3a6b7;
+  --bs-success-rgb: 243, 166, 183;
+  --bs-danger: #e99ba8;
+  --bs-danger-rgb: 233, 155, 168;
+  --bs-info: #f9e4e6;
+  --bs-info-rgb: 249, 228, 230;
+  --bs-light: #fff0f3;
+  --bs-light-rgb: 255, 240, 243;
+  --bs-dark: #c89fa5;
+  --bs-dark-rgb: 200, 159, 165;
+}
+
+body {
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+}
+
+#intro h2 {
+  color: #2b3e4f;
+}
+
+.navbar {
+  background-color: var(--bs-secondary) !important;
+}
+
+.navbar-nav .nav-link {
+  color: black !important; /* Make the navbar text black for visibility */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: var(--bs-primary) !important; /* Remove green and apply pink */
+  color: white !important; /* Ensure text is readable when hovered */
+}
+
+.masthead {
+  background-color: var(--bs-primary) !important;
+}
+
+.portfolio-item-caption {
+  background-color: rgba(248, 183, 195, 0.8);
+}
+
+.bg-primary {
+  background-color: #f8a8b9 !important; /* Override Bootstrap’s primary color */
+  border: none;
+}
+
+/* Optional: Hover effect */
+.navbar-toggler:hover {
+  background-color: #f7b4c2 !important;
+}
+
+.btn-primary {
+  background-color: var(--bs-success) !important;
+  border-color: var(--bs-success) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-danger) !important;
+  border-color: var(--bs-danger) !important;
+}
+
+hr.star-light {
+  border-top: 3px solid var(--bs-light)
+}
+
+
+hr.star-dark {
+  border-top: 3px solid var(--bs-dark);
+}
+
+.copyright {
+  background-color: var(--bs-secondary);
+  color: var(--bs-dark);
+}
+.star::before {
+  background-color: #fcb5c3; /* Change background of the star icon to match the section */
+  color: #fff; /* Ensure the star icon's color stands out */
+}
+
+hr.star {
+  border-top: 1px solid #fcb5c3; /* Match the hr line with the section background */
+}
+
+.portfolio-item:hover .portfolio-item-caption {
+  background-color: rgba(245, 198, 212, 0.8); /* 70% opacity */
+}
+/* Initial icon color */
+.portfolio-item-caption-content i {
+  color: pink; /* Set initial icon color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect - stays pink or changes to another color if desired */
+.portfolio-item-caption-content:hover i {
+  color: pink; /* Maintain or change to another color */
+}
+
+/* Ensure no other color is applied when hovering out */
+.portfolio-item-caption-content i:active,
+.portfolio-item-caption-content i:focus {
+  color: pink; /* Ensure focus/active state is the same */
+}
+
+/* Change the navbar-toggler icon background color to pink */
+.navbar-toggler {
+  background-color: #f8a8b9; /* Replace with your desired pink shade */
+  border: none; /* Remove border if you don't need it */
+}
+
+/* Change the navbar-toggler icon (three lines / hamburger icon) */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Optional: Add hover effect to the navbar-toggler */
+.navbar-toggler:hover {
+  background-color: #f7b4c2; /* Slightly darker pink for hover effect */
+}
+
+
+.star-light-hr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  margin: 0 auto; /* Center the whole HR block */
+  width: 80%; /* Adjust width to match the second HR's width */
+  max-width: 600px; /* Optional: Limit max width */
+  gap: 5px; /* Space between lines and star */
+}
+
+.line-left, 
+.line-right {
+  flex: 1;
+  border: none;
+  border-top: 5px solid white; /* Thicker white line */
+  margin: 0;
+}
+
+.star-icon {
+  color: white; /* White star */
+  font-size: 45px; /* Adjust star size */
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+.modal.show .modal-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Optional for close animation: fading out */
+.modal.fade-out .modal-content {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+/* Open animation */
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Close animation */
+@keyframes modalFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+/* Apply the animations to modal-content */
+.modal-content {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+.modal.fade-out {
+  opacity: 0;
+  transform: scale(0.7);
+}
+.row-spacer {
+  height: 50px; /* Adjust this value to change the spacing */
+  width: 100%; /* Make it span the full width */
+  display: block; /* Optional, ensures it's treated as a block */
+}
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .row-spacer {
+      height: 0px; /* Adjust for mobile view */
+  }
+}
+
+/* Optional: Set a default height for larger screens */
+@media (min-width: 769px) {
+  .row-spacer {
+      height: 50px; /* Default height for larger screens */
+  }
+}
+.text-justify {
+  text-align: justify; /* This will justify the text */
+}
+.custom-spacing {
+  margin-bottom: 5px; /* Adjust the value to your preference */
+}

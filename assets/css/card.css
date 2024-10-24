@@ -84,21 +84,7 @@
     color: #F48FB1; /* Pastel pink color */
 }
 
-/* Envelope animation on hover */
-.custom-envelope-wrapper:hover .lid.one {
-    transform: rotateX(90deg);
-    transition-delay: 0s;
-}
 
-.custom-envelope-wrapper:hover .lid.two {
-    transform: rotateX(180deg);
-    transition-delay: 0.25s;
-}
-
-.custom-envelope-wrapper:hover .letter {
-    transform: translateY(-50px);
-    transition-delay: 0.5s;
-}
 .seal {
     position: absolute; /* Keep as is */
     top: 55%; /* Adjusted to move it down */
@@ -113,3 +99,18 @@
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
+/* Animation triggered by a class */
+.open-envelope .lid.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+
+.open-envelope .lid.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+}
+
+.open-envelope .letter {
+    transform: translateY(-50px);
+    transition-delay: 0.5s;
+}

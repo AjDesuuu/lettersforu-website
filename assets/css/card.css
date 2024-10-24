@@ -84,20 +84,20 @@
     color: #F48FB1; /* Pastel pink color */
 }
 
-/* Envelope animation on hover */
-.custom-envelope-wrapper:hover .lid.one {
+/* Animation triggered by a class */
+.open-envelope .lid.one {
     transform: rotateX(90deg);
     transition-delay: 0s;
 }
 
-.custom-envelope-wrapper:hover .lid.two {
+.open-envelope .lid.two {
     transform: rotateX(180deg);
-    transition-delay: 0.25s;
+    transition-delay: 0.20s;
 }
 
-.custom-envelope-wrapper:hover .letter {
+.open-envelope .letter {
     transform: translateY(-50px);
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 }
 .seal {
     position: absolute; /* Keep as is */
@@ -112,3 +112,4 @@
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
+

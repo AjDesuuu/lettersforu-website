@@ -1,6 +1,31 @@
 (function() {
   "use strict"; // Start of use strict
 
+  var envelopeWrappers = document.querySelectorAll('.custom-envelope-wrapper');
+
+  envelopeWrappers.forEach(function(wrapper) {
+    wrapper.addEventListener('click', function() {
+      // Trigger the envelope opening animation
+      wrapper.classList.add('open-envelope');
+
+      // Get the corresponding modal ID from the parent anchor tag's dataset
+      var modalId = this.parentElement.getAttribute('data-modal');
+
+      // Wait for the animation to complete before triggering the modal
+      setTimeout(function() {
+        // Remove the animation class to reset the envelope state
+        wrapper.classList.remove('open-envelope');
+
+        // Select the modal using the modalId
+        var myModal = document.querySelector(modalId);
+        var modalInstance = new bootstrap.Modal(myModal);
+        
+        // Show the modal
+        modalInstance.show();
+      }, 1100); // Adjust this timeout based on the envelope animation duration
+    });
+  });
+
   var scrollToTop = document.querySelector('.scroll-to-top');
   
   if (scrollToTop) {
